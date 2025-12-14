@@ -3,24 +3,25 @@ import { User } from './user.entity';
 import { Device } from './device.entity';
 import { SparePart } from './spare-part.entity';
 
+// Entity Intervention (fiche de réparation - table interventions fel database)
 @Entity('interventions')
 export class Intervention {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column() // Date mta3 el intervention
   date: Date;
 
-  @Column()
+  @Column() // Description (chnou sra w chnou tsalla7)
   description: string;
 
-  @ManyToOne(() => User, user => user.interventions)
+  @ManyToOne(() => User, user => user.interventions) // Intervention ma3mouha user we7ed (technicien)
   user: User;
 
-  @ManyToOne(() => Device, device => device.interventions)
+  @ManyToOne(() => Device, device => device.interventions) // Intervention 3la device we7ed
   device: Device;
 
-  @ManyToMany(() => SparePart, sparePart => sparePart.interventions)
-  @JoinTable()
+  @ManyToMany(() => SparePart, sparePart => sparePart.interventions) // Intervention tnajem testa3mel barcha pièces
+  @JoinTable() // JoinTable bech tcréi table intermédiaire (many-to-many)
   spareParts: SparePart[];
 }
