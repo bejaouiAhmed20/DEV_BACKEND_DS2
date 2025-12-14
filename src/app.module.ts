@@ -7,6 +7,7 @@ import { Device } from './entities/device.entity';
 import { Intervention } from './entities/intervention.entity';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { PartsModule } from './parts/parts.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { UsersModule } from './users/users.module';
     }),
     AuthModule,
     UsersModule,
+    PartsModule,
   ],
 })
 export class AppModule {}

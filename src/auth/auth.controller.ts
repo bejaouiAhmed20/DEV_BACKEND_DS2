@@ -8,7 +8,7 @@ import { LoginDto } from './dto/login.dto';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  // POST /auth/register - Inscription (tsajjel user jdid)
+  // POST /auth/register - Inscription (tsajjel user jdid - toujours TECH)
   @Post('register')
   register(@Body() dto: RegisterDto) {
     return this.authService.register(dto);
