@@ -8,6 +8,8 @@ import { Intervention } from './entities/intervention.entity';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { PartsModule } from './parts/parts.module';
+import { DevicesModule } from './devices/devices.module';
+import { InterventionsModule } from './interventions/interventions.module';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { PartsModule } from './parts/parts.module';
     AuthModule,
     UsersModule,
     PartsModule,
+    DevicesModule,
+    InterventionsModule,
   ],
 })
 export class AppModule {}

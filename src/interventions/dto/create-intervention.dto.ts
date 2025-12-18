@@ -1,12 +1,16 @@
-// DTO beech na3mlou création leel intervention
+import { IsNotEmpty, IsNumber, IsArray, IsString } from 'class-validator';
+
+// DTO bech ncréiw intervention
 export class CreateInterventionDto {
+  @IsNumber()
+  @IsNotEmpty()
+  deviceId: number; // ID mta3 el appareil
 
-  // ID de l'appareil à réparer
-  deviceId: number;
+  @IsArray()
+  @IsNumber({}, { each: true })
+  sparePartIds: number[]; // Liste des IDs mta3 el pièces
 
-  // Liste des IDs des pièces lyy sta3malnehom
-  sparePartIds: number[];
-
-  // Description mtee3 l'intervention
-  description: string;
+  @IsString()
+  @IsNotEmpty()
+  description: string; // Description mta3 el intervention
 }

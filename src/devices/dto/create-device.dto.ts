@@ -1,7 +1,16 @@
-// 3malna dto beech najmou on reçoit les données lors de la création d’un appareil
+import { IsNotEmpty, IsString } from 'class-validator';
 
+// DTO bech ncréiw device jdid
 export class CreateDeviceDto {
+  @IsString()
+  @IsNotEmpty()
   serialNumber: string;
+
+  @IsString()
+  @IsNotEmpty()
   brand: string;
+
+  @IsString()
+  @IsNotEmpty()
   model: string;
 }
